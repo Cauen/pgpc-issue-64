@@ -1,11 +1,9 @@
 generator client {
   provider = "prisma-client-js"
-  output   = "../node_modules"
 }
 
 generator pothos {
   provider     = "prisma-pothos-types"
-  clientOutput = ".prisma/client"
 }
 
 generator pothosCrud {

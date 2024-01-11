@@ -1,8 +1,8 @@
-import * as express from "express";
+import express from "express";
 import { ApolloServer } from "@apollo/server";
 import { expressMiddleware } from "@apollo/server/express4";
 import { createServer } from "http";
-import { generateSchema } from "./src/builder";
+import { generateSchema } from "./src/schema";
 
 (async () => {
   const app = express();

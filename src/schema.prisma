@@ -1,0 +1,24 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../node_modules"
+}
+
+generator pothos {
+  provider     = "prisma-pothos-types"
+  clientOutput = ".prisma/client"
+}
+
+generator pothosCrud {
+  provider            = "prisma-generator-pothos-codegen"
+  generatorConfigPath = "./pothos.config.ts"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model organisation {
+  ID                                      Int                          @id @unique(map: "ID_UNIQUE") @default(autoincrement())
+  Name                            String?                      @db.VarChar(45)
+}
